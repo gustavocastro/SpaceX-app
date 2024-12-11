@@ -1,0 +1,20 @@
+.spx-button--primary {
+    @apply 
+        text-white
+        bg-green-500 hover:bg-green-600 
+        focus:outline-none focus:ring-4 focus:ring-green-300 
+        font-medium text-sm text-center
+        rounded-lg
+        px-4 py-2;
+}
+
+.spx-button--secondary {
+    @apply 
+        text-gray-900 
+        bg-white hover:bg-gray-100 
+        border border-gray-300
+        focus:outline-none focus:ring-4 focus:ring-gray-100
+        font-medium text-sm text-center
+        rounded-lg
+        px-4 py-2;
+}

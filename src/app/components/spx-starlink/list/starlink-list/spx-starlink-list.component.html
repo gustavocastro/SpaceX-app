@@ -1,0 +1,152 @@
+<div class="spx-starlink-list__container">
+    <div class="spx-starlink-list__container-header">
+        <h5 class="spx-starlink-list__container-header-text">
+            The Starlink collection
+        </h5>
+   </div>
+
+    <div class="spx-starlink-list__starlink-container">
+        <div class="spx-starlink-list__tabs">
+            <ul 
+                class="spx-starlink-list__tabs-list" 
+                id="default-tab" 
+                data-tabs-toggle="#default-tab-content" 
+                data-tabs-active-classes="spx-starlink-list__tabs-list-item--active"
+                role="tablist">
+
+                <li 
+                    class="spx-starlink-list__tabs-list-item" 
+                    role="presentation">
+
+                    <button  
+                        type="button"
+                        class="spx-starlink-list__tabs-list-button" 
+                        id="divisible3-tab" 
+                        data-tabs-target="#divisible3" 
+                        role="tab" 
+                        aria-controls="divisible3" 
+                        aria-selected="false">
+                        
+                        The #3's
+                    </button>
+                </li>
+
+                <li 
+                    class="spx-starlink-list__tabs-list-item" 
+                    role="presentation">
+
+                    <button  
+                        type="button"
+                        class="spx-starlink-list__tabs-list-button" 
+                        id="divisible5-tab" 
+                        data-tabs-target="#divisible5" 
+                        role="tab" 
+                        aria-controls="divisible5" 
+                        aria-selected="false">
+                        
+                        The #5's
+                    </button>
+                </li>
+
+                <li 
+                    class="spx-starlink-list__tabs-list-item" 
+                    role="presentation">
+
+                    <button  
+                        type="button"
+                        class="spx-starlink-list__tabs-list-button" 
+                        id="both-tab" 
+                        data-tabs-target="#both" 
+                        role="tab" 
+                        aria-controls="both" 
+                        aria-selected="false">
+                        
+                        Both
+                    </button>
+                </li>
+
+                <li 
+                    class="spx-starlink-list__tabs-list-item" 
+                    role="presentation">
+
+                    <button  
+                        type="button"
+                        class="spx-starlink-list__tabs-list-button" 
+                        id="none-tab" 
+                        data-tabs-target="#none" 
+                        role="tab" 
+                        aria-controls="none" 
+                        aria-selected="false">
+                        
+                        None
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+        <div id="default-tab-content">
+            @for (list of starlinkLists | keyvalue; track $index) {
+                <div 
+                    class="spx-starlink-list__group"
+                    [id]="list.key" 
+                    role="tabpanel" 
+                    [attr.aria-labelledby]="'{{ list.key }}-tab'">
+
+                   <ul 
+                        role="list" 
+                        class="spx-starlink-list__items-container">
+        
+                        @for (starlink of list.value; track $index) {
+                            <li class="spx-starlink-list__item">
+                                <a 
+                                    [routerLink]="['/starlink', starlink.launch]"
+                                    class="spx-starlink-list__item-block">
+    
+                                    <div class="spx-starlink-list__item-block-info">
+                                        <h6 class="spx-starlink-list__item-block-info-header">
+                                            {{ starlink.id }}
+                                        </h6>
+    
+                                        <p class="spx-starlink-list__item-block-info-text">
+                                            ID
+                                        </p>
+                                    </div>
+    
+                                    <div class="spx-starlink-list__item-block-info">
+                                        <h6 class="spx-starlink-list__item-block-info-header">
+                                            {{ starlink.spaceTrack.CREATION_DATE | date: 'dd-MM-yyyy' }}
+                                        </h6>
+    
+                                        <p class="spx-starlink-list__item-block-info-text">
+                                            Creation Date
+                                        </p>
+                                    </div>
+    
+                                    <div class="spx-starlink-list__item-block-info">
+                                        <h6 class="spx-starlink-list__item-block-info-header">
+                                            {{ starlink.spaceTrack.COUNTRY_CODE }}
+                                        </h6>
+    
+                                        <p class="spx-starlink-list__item-block-info-text">
+                                            Country Code
+                                        </p>
+                                    </div>
+    
+                                    <div class="spx-starlink-list__item-block-info">
+                                        <h6 class="spx-starlink-list__item-block-info-header">
+                                            {{ starlink.height_km }}
+                                        </h6>
+    
+                                        <p class="spx-starlink-list__item-block-info-text">
+                                            Height
+                                        </p>
+                                    </div>
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            }
+        </div>
+    </div>
+</div>

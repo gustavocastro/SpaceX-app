@@ -1,0 +1,97 @@
+<div class="spx-crew-details__container">
+    <span class="spx-crew-details__header">
+        Your profile, {{ user?.name }}
+    </span>
+
+    <div class="spx-crew-details__image-container">
+        <img 
+            class="spx-crew-details__image" 
+            [src]="user?.image" 
+            alt="Profile image">
+        
+        <div class="spx-crew-details__image-content">
+            <h4 class="spx-crew-details__image-content-header">
+                Profile image
+            </h4>
+            
+            <div class="spx-crew-details__image-content-buttons">
+                <button class="spx-button--primary">
+                    Replace
+                </button>
+                
+                <button class="spx-button--secondary">
+                    Remove
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="spx-crew-details__info-container">
+        <div class="spx-crew-details__status-container">
+            <h5 class="spx-crew-details__info-container-header">
+                Status
+            </h5>
+
+            <span 
+                class="spx-crew-details__status-badge"
+                [class.spx-crew-details__status-badge--active]="user?.status === 'active'"
+                [class.spx-crew-details__status-badge--inactive]="user?.status === 'inactive'">
+
+                {{ user?.status }}
+            </span>
+        </div>
+
+        <div class="spx-crew-details__launches-container">
+            <h5 class="spx-crew-details__info-container-header">
+                Launches
+            </h5>
+
+            <span class="spx-crew-details__launches-count">
+                {{ user?.launches?.length ?? 0 }}
+            </span>
+        </div>
+    </div>
+
+    <div class="spx-crew-details__details-container">
+        <h4 class="spx-crew-details__details-header">
+            Your details
+        </h4>
+
+        <div class="spx-crew-details__details">
+            <div class="spx-crew-details__details-row">
+                <span class="spx-crew-details__details-title">
+                    Name
+                </span>
+
+                <span class="spx-crew-details__details-content">
+                    {{ user?.name }}
+                </span>
+            </div>
+
+            <div class="spx-crew-details__details-row">
+                <span class="spx-crew-details__details-title">
+                    Agency
+                </span>
+
+                <span class="spx-crew-details__details-content">
+                    {{ user?.agency }}
+                </span>
+            </div>
+
+            <div class="spx-crew-details__details-row">
+                <span class="spx-crew-details__details-title">
+                    Social
+                </span>
+
+                <span class="spx-crew-details__details-content">
+                    <a 
+                        [href]="user?.wikipedia"
+                        class="spx-crew-details__details-social-link">
+
+                        Wikipedia page
+                    </a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,146 @@
+<nav class="spx-topbar">
+    <div class="spx-topbar__container">
+        <div class="spx-topbar__logo">
+            <img 
+                class="spx-topbar__image" 
+                [src]="'/logo.png'"
+                alt="SpaceX App Logo" />
+
+            <span class="spx-topbar__logo-name">
+                SpaceX App
+            </span>
+        </div>
+
+        <div class="spx-topbar__user-menu">
+            <button 
+                type="button" 
+                class="spx-topbar__user-dropdown-button"
+                data-dropdown-toggle="user-dropdown"
+                [disabled]="currentUser === null">
+                
+                @if (currentUser !== null) {
+                    <img 
+                    class="spx-topbar__user-avatar" 
+                    [src]="currentUser.image" 
+                    alt="User avatar">
+                
+                    <span class="spx-topbar__user-name">
+                        {{ currentUser.name }}
+                    </span>
+                } @else {
+                    <div class="spx-topbar__user-empty-avatar">
+                        <svg 
+                            class="spx-topbar__user-empty-avatar-image" 
+                            fill="currentColor" 
+                            viewBox="0 0 20 20" 
+                            xmlns="http://www.w3.org/2000/svg">
+                            
+                            <path 
+                                fill-rule="evenodd" 
+                                d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" 
+                                clip-rule="evenodd">
+                            </path>
+                        </svg>
+                    </div>
+                
+                    <span class="spx-topbar__user-name">
+                        Signed out
+                    </span>
+                }
+            </button>
+
+            <div 
+                class="hidden spx-topbar__user-dropdown" 
+                id="user-dropdown">
+
+                <div class="spx-topbar__user-dropdown-header">
+                    <span class="spx-topbar__user-dropdown-header-name">
+                        {{ currentUser?.name }}
+                    </span>
+
+                    <span class="spx-topbar__user-dropdown-header-email">
+                        {{ currentUser?.agency }}
+                    </span>
+                </div>
+
+                <ul 
+                    class="spx-topbar__user-dropdown-options" 
+                    aria-labelledby="user-menu-button">
+
+                    <li>
+                        <a 
+                            [routerLink]="['/crew', currentUser?.id]" 
+                            class="spx-topbar__user-dropdown-option">
+                            
+                            Profile
+                        </a>
+                    </li>
+
+                    <li>
+                        <button 
+                            type="button" 
+                            class="spx-topbar__user-dropdown-option"
+                            (click)="signOut()">
+                            
+                            Sign out
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <button 
+                type="button"
+                class="spx-topbar__tab-menu" 
+                data-collapse-toggle="navbar-tabs" 
+                aria-controls="navbar-language" 
+                aria-expanded="false">
+                
+                <span class="spx-topbar__tab-menu-label">
+                    Open main menu
+                </span>
+                
+                <svg 
+                    class="spx-topbar__tab-menu-icon" 
+                    aria-hidden="true" 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    fill="none" 
+                    viewBox="0 0 17 14">
+
+                    <path 
+                        stroke="currentColor" 
+                        stroke-linecap="round" 
+                        stroke-linejoin="round" 
+                        stroke-width="2" 
+                        d="M1 1h15M1 7h15M1 13h15"/>
+                </svg>
+            </button>
+        </div>
+
+        <div 
+            id="navbar-tabs"
+            class="hidden spx-topbar__tabs">
+
+            <ul class="spx-topbar__tabs-list">
+                <li>
+                    <a 
+                        [routerLink]="'/crew'"
+                        [routerLinkActive]="'spx-topbar__tabs-list-item--active'"
+                        class="spx-topbar__tabs-list-item">
+                        
+                        Crew
+                    </a>
+                </li>
+
+                <li>
+                    <a 
+                        [routerLink]="'/starlink'"
+                        [routerLinkActive]="'spx-topbar__tabs-list-item--active'"
+                        class="spx-topbar__tabs-list-item">
+                        
+                        Starlinks
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>  

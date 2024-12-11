@@ -1,0 +1,57 @@
+.spx-crew-list__container {
+    @apply w-full;
+}
+
+.spx-crew-list__container-header {
+    @apply
+        flex items-center justify-between 
+        mb-4;
+}
+
+.spx-crew-list__container-header-text {
+    @apply
+        text-xl font-bold 
+        text-gray-900
+        leading-none;
+}
+
+.spx-crew-list__crew-container {
+    @apply flow-root;
+}
+
+.spx-crew-list__crew-list {
+    @apply divide-y divide-gray-200;
+}
+
+.spx-crew-list__crew-list-item {
+    @apply py-3 sm:py-4;
+}
+
+.spx-crew-list__crew-list-item-block {
+    @apply flex items-center;
+}
+
+.spx-crew-list__crew-list-item-image-area {
+    @apply flex-shrink-0;
+}
+
+.spx-crew-list__crew-list-item-image {
+    @apply 
+        w-8 h-8 
+        rounded-full
+        object-cover
+        object-center;
+}
+
+.spx-crew-list__crew-list-item-text-area {
+    @apply 
+        flex-1
+        min-w-0
+        ms-4;
+}
+
+.spx-crew-list__crew-list-item-text {
+    @apply 
+        text-sm font-medium text-gray-900 
+        truncate;
+}

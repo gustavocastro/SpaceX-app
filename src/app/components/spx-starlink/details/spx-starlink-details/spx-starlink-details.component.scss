@@ -1,0 +1,24 @@
+.spx-starlink-details__header {
+    @apply 
+        text-2xl font-extrabold
+        mb-6;
+}
+
+.spx-starlink-details__info {
+    @apply
+        block 
+        w-full 
+        p-6 
+        bg-white
+        border border-gray-200 rounded-lg;
+}
+
+.spx-starlink-details__info-header {
+    @apply
+        mb-2 
+        text-base font-bold text-gray-900;
+}
+
+.spx-starlink-details__info-text {
+    @apply font-normal text-gray-700;
+}

@@ -1,0 +1,42 @@
+<div class="spx-crew-list__container">
+    <div class="spx-crew-list__container-header">
+        <h5 class="spx-crew-list__container-header-text">
+            Our Crew
+        </h5>
+   </div>
+
+   <div class="spx-crew-list__crew-container">
+        <ul 
+            role="list" 
+            class="spx-crew-list__crew-list">
+
+            @for (user of users; track user.id) {
+                <li class="spx-crew-list__crew-list-item">
+                    <div class="spx-crew-list__crew-list-item-block">
+                        <div class="spx-crew-list__crew-list-item-image-area">
+                            <img 
+                                class="spx-crew-list__crew-list-item-image" 
+                                [src]="user.image" 
+                                [alt]="'{{user.name}} image'">
+                        </div>
+    
+                        <div class="spx-crew-list__crew-list-item-text-area">
+                            <p class="spx-crew-list__crew-list-item-text">
+                                {{ user.name }}
+                            </p>
+                        </div>
+    
+                        <button 
+                            type="button" 
+                            class="spx-button--primary"
+                            (click)="selectUser(user)">
+                            
+                            Sign in
+                        </button>
+                    </div>
+                </li>
+            }
+        </ul>
+   </div>
+</div>
+

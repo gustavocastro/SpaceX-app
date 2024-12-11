@@ -1,0 +1,121 @@
+.spx-crew-details__header {
+    @apply 
+        block 
+        mb-6 
+        text-xl font-bold text-gray-900;
+}
+
+.spx-crew-details__image-container {
+    @apply 
+        flex flex-col md:items-center md:flex-row
+        w-full
+        bg-white border 
+        border-gray-200 
+        rounded-lg;
+}
+
+.spx-crew-details__image {
+    @apply 
+        object-cover
+        object-top
+        w-full md:w-72
+        h-48
+        rounded-t-lg md:rounded-none md:rounded-s-lg;
+}
+
+.spx-crew-details__image-content {
+    @apply 
+        flex flex-col justify-between 
+        md:h-36
+        p-4 
+        leading-normal;
+}
+
+.spx-crew-details__image-content-header {
+    @apply 
+        mb-2 
+        text-lg font-bold text-gray-900;
+}
+
+.spx-crew-details__image-content-buttons {
+    @apply flex gap-2;
+}
+
+.spx-crew-details__info-container {
+    @apply 
+        flex items-center justify-center gap-12 md:gap-20
+        my-6
+        p-6
+        border border-gray-200
+        rounded-lg;
+}
+
+.spx-crew-details__info-container-header {
+    @apply 
+        mb-2 
+        text-base font-bold text-gray-900;
+}
+
+.spx-crew-details__status-badge {
+    @apply 
+        border 
+        px-2 py-1 
+        text-sm font-semibold
+        rounded-full;
+
+    &--active {
+        @apply 
+            bg-green-100 
+            text-green-600
+            border-green-600;
+    }
+
+    &--inactive {
+        @apply 
+            bg-red-100 
+            text-red-600
+            border-red-600;
+    }
+}
+
+.spx-crew-details__status-container,
+.spx-crew-details__launches-container {
+    @apply flex flex-col items-center;
+}
+
+.spx-crew-details__launches-count {
+    @apply text-lg font-bold;
+}
+
+.spx-crew-details__details-container {
+    @apply
+        p-6
+        bg-gray-100
+        rounded-lg;
+}
+
+.spx-crew-details__details-header {
+    @apply 
+        mb-3 
+        pb-3
+        text-lg font-bold text-gray-900
+        border-b border-b-gray-300;
+}
+
+.spx-crew-details__details {
+    @apply flex flex-col gap-2;
+}
+
+.spx-crew-details__details-row {
+    @apply flex;
+}
+
+.spx-crew-details__details-title {
+    @apply
+        w-40
+        font-bold;
+}
+
+.spx-crew-details__details-social-link {
+    @apply underline;
+}

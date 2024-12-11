@@ -1,0 +1,11 @@
+.spx-app__container {
+    @apply 
+        container
+        max-w-screen-md
+        mx-auto
+        md:mt-10
+        p-4 md:p-10
+        bg-white
+        rounded
+        md:shadow-md md:shadow-gray-200;
+}

@@ -1,0 +1,92 @@
+.spx-starlink-list__container {
+    @apply w-full;
+}
+
+.spx-starlink-list__container-header {
+    @apply
+        flex items-center justify-between 
+        mb-4;
+}
+
+.spx-starlink-list__container-header-text {
+    @apply
+        text-xl font-bold 
+        text-gray-900
+        leading-none;
+}
+
+.spx-starlink-list__starlink-container {
+   @apply flex flex-col gap-4;
+}
+
+.spx-starlink-list__group {
+    @apply 
+        w-full
+        bg-white 
+        rounded-lg
+        overflow-auto;
+}
+
+.spx-starlink-list__group-header {
+    @apply 
+        mb-4 
+        text-lg font-medium text-gray-600;
+}
+
+.spx-starlink-list__items-container {
+    @apply divide-y divide-gray-200;
+}
+
+.spx-starlink-list__item {
+    @apply py-3 sm:py-4;
+}
+
+.spx-starlink-list__item-block {
+    @apply grid grid-cols-2 md:grid-cols-4 gap-4;
+}
+
+.spx-starlink-list__item-block-info {
+    @apply flex flex-col justify-center;
+}
+
+.spx-starlink-list__item-block-info-header {
+    @apply 
+        mb-2 text-2xl font-extrabold
+        truncate;
+}
+
+.spx-starlink-list__item-block-info-text {
+    @apply 
+        text-sm text-gray-500 dark:text-gray-400
+        truncate;
+}
+
+.spx-starlink-list__tabs {
+    @apply
+        mb-4 
+        border-b border-gray-200 ;
+}
+
+.spx-starlink-list__tabs-list {
+    @apply 
+        flex flex-wrap 
+        -mb-px 
+        text-sm font-medium text-center;
+}
+
+.spx-starlink-list__tabs-list-item {
+    @apply me-2;
+
+    &--active {
+        @apply 
+            text-green-500
+            border-b-green-500;
+    }
+}
+
+.spx-starlink-list__tabs-list-button {
+    @apply
+        inline-block 
+        p-4 
+        border-b-2 rounded-t-lg;
+}

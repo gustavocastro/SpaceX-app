@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './app/styles/buttons.scss';
+
+body {
+    @apply 
+        bg-white md:bg-gray-100 
+        text-gray-800;
+}
